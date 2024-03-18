@@ -1,27 +1,85 @@
-<!-- employee-edit.component.html -->
-<h2>Edit Employee</h2>
-<form (submit)="saveChanges()">
-  <label for="employeeNumber">Employee Number:</label>
-  <input type="text" id="employeeNumber" name="employeeNumber" [(ngModel)]="employee.employeeNumber" required>
-
-  <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName" [(ngModel)]="employee.firstName" required>
-
-  <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName" [(ngModel)]="employee.lastName" required>
-
-  <label for="birthday">Birthday:</label>
-  <input type="date" id="birthday" name="birthday" [(ngModel)]="employee.birthday" required>
-
-  <label for="gender">Gender:</label>
-  <select id="gender" name="gender" [(ngModel)]="employee.gender" required>
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-  </select>
-
-  <label for="pictureUrl">Picture URL:</label>
-  <input type="text" id="pictureUrl" name="pictureUrl" [(ngModel)]="employee.pictureUrl">
-
-  <!-- Add input fields for other employee properties -->
-  <button type="submit">Save Changes</button>
-</form>
+<div class="container mt-4">
+    <h2 class="mb-4">Edit Employee</h2>
+    <div class="card">
+      <div class="card-body">
+        <form (ngSubmit)="saveEmployeeChanges()">
+          <div class="form-group">
+            <label for="employeeId">Employee ID</label>
+            <input type="number" class="form-control" id="employeeId" [(ngModel)]="employee.EmployeeId" name="employeeId" required>
+          </div>
+          <div class="form-group">
+            <label for="employeeNumber">Employee Number</label>
+            <input type="text" class="form-control" id="employeeNumber" [(ngModel)]="employee.EmployeeNumber" name="employeeNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.FirstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.LastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" class="form-control" id="birthday" [(ngModel)]="employee.Birthday" name="birthday" required>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" [(ngModel)]="employee.Gender" name="gender" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="picture">Picture (URL)</label>
+            <input type="text" class="form-control" id="picture" [(ngModel)]="employee.Picture" name="picture">
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <h2 class="mb-4">Edit Employee</h2>
+    <div class="card">
+      <div class="card-body">
+        <form (ngSubmit)="saveEmployeeChanges()">
+          <div class="form-group">
+            <label for="employeeId">Employee ID</label>
+            <input type="number" class="form-control" id="employeeId" [(ngModel)]="employee.EmployeeId" name="employeeId" required>
+          </div>
+          <div class="form-group">
+            <label for="employeeNumber">Employee Number</label>
+            <input type="text" class="form-control" id="employeeNumber" [(ngModel)]="employee.EmployeeNumber" name="employeeNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.FirstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.LastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" class="form-control" id="birthday" [(ngModel)]="employee.Birthday" name="birthday" required>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" [(ngModel)]="employee.Gender" name="gender" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="picture">Picture (URL)</label>
+            <input type="text" class="form-control" id="picture" [(ngModel)]="employee.Picture" name="picture">
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+    
+  
+  

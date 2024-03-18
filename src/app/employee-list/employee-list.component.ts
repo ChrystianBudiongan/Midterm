@@ -1,3 +1,5 @@
+// employee-list.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
@@ -13,6 +15,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-    this.employees = this.employeeService.getAllEmployees();
+    this.employees = this.employeeService.getEmployees();
   }
 }
+

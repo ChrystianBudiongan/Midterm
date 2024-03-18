@@ -1,4 +1,5 @@
 // employee-edit.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee.model';
@@ -10,28 +11,16 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-edit.component.css']
 })
 export class EmployeeEditComponent implements OnInit {
-  employee: Employee = {
-    employeeId: 0,
-    employeeNumber: '',
-    firstName: '',
-    lastName: '',
-    birthday: new Date(),
-    gender: '',
-    pictureUrl: ''
-  };
+  employee: Employee;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private employeeService: EmployeeService
-  ) { }
+  constructor(private route: ActivatedRoute, private router: Router, private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.employee = this.employeeService.getEmployeeById(id);
   }
 
-  saveChanges(): void {
+  saveEmployeeChanges() {
     this.employeeService.updateEmployee(this.employee);
     this.router.navigate(['/employees']);
   }

@@ -1,13 +1,35 @@
-<!-- employee-list.component.html -->
-<div *ngFor="let employee of employees">
-    <div>
-      <span>Employee Number: {{ employee.employeeNumber }}</span>
-      <span>Last Name: {{ employee.lastName }}</span>
-      <span>First Name: {{ employee.firstName }}</span>
-      <!-- Add thumbnail display if available -->
-      <img *ngIf="employee.pictureUrl" [src]="employee.pictureUrl" alt="Employee Thumbnail">
-      <button (click)="viewDetails(employee.employeeId)">View Details</button>
-      <button (click)="editEmployee(employee.employeeId)">Edit</button>
-      <button (click)="deleteEmployee(employee.employeeId)">Delete</button>
+<div class="container mt-4">
+    <h2 class="mb-4">Employee List</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Number</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.EmployeeId }}</td>
+            <td>{{ employee.EmployeeNumber }}</td>
+            <td>{{ employee.FirstName }}</td>
+            <td>{{ employee.LastName }}</td>
+            <td>{{ employee.Birthday }}</td>
+            <td>{{ employee.Gender }}</td>
+            <td><img [src]="employee.Picture" alt="Employee Image" width="50" height="50"></td>
+            <td>
+              <a [routerLink]="['/edit', employee.EmployeeId]" class="btn btn-primary btn-sm">Edit</a>
+              <button type="button" class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.EmployeeId)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  
