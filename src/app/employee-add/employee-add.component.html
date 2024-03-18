@@ -1,0 +1,27 @@
+<!-- employee-add.component.html -->
+<h2>Add Employee</h2>
+<form (submit)="addEmployee()">
+  <label for="employeeNumber">Employee Number:</label>
+  <input type="text" id="employeeNumber" name="employeeNumber" [(ngModel)]="newEmployee.employeeNumber" required>
+
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" [(ngModel)]="newEmployee.firstName" required>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" [(ngModel)]="newEmployee.lastName" required>
+
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday" [(ngModel)]="newEmployee.birthday" required>
+
+  <label for="gender">Gender:</label>
+  <select id="gender" name="gender" [(ngModel)]="newEmployee.gender" required>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+
+  <label for="pictureUrl">Picture URL:</label>
+  <input type="text" id="pictureUrl" name="pictureUrl" [(ngModel)]="newEmployee.pictureUrl">
+
+  <!-- Add input fields for other employee properties -->
+  <button type="submit">Add Employee</button>
+</form>

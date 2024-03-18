@@ -1,0 +1,13 @@
+<!-- employee-list.component.html -->
+<div *ngFor="let employee of employees">
+    <div>
+      <span>Employee Number: {{ employee.employeeNumber }}</span>
+      <span>Last Name: {{ employee.lastName }}</span>
+      <span>First Name: {{ employee.firstName }}</span>
+      <!-- Add thumbnail display if available -->
+      <img *ngIf="employee.pictureUrl" [src]="employee.pictureUrl" alt="Employee Thumbnail">
+      <button (click)="viewDetails(employee.employeeId)">View Details</button>
+      <button (click)="editEmployee(employee.employeeId)">Edit</button>
+      <button (click)="deleteEmployee(employee.employeeId)">Delete</button>
+    </div>
+  </div>
